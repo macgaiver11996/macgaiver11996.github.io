@@ -6,12 +6,9 @@ This is an educational project designed to demonstrate and explain the cybersecu
 
 ## 🚀 Live Demo
 
-See the live and interactive demonstration of this project by clicking the link below:
+Click the button below to see the live and interactive demonstration of this project:
 
-### **[https://macgaiver11996.github.io](https://macgaiver11996.github.io)**
-
-![Demo Screenshot](https://i.imgur.com/your-screenshot-url.png)
-*(এখানে আপনার লাইভ ওয়েবসাইটের একটি স্ক্রিনশট তুলে তার লিঙ্ক যোগ করতে পারেন)*
+[![View Live Demo](https://img.shields.io/badge/View_Live_Demo-58a6ff?style=for-the-badge&logo=githubpages)](https://macgaiver11996.github.io)
 
 ---
 
@@ -28,11 +25,11 @@ This project aims to educate users about the dangers of blindly copying and past
 
 ### How it Works
 
-1.  **Visit the Live Demo:** Go to the [project's live site](https://macgaiver11996.github.io).
-2.  **Copy the Text:** The page will show you a harmless command to copy.
-3.  **Paste to Reveal:** When you paste the copied text into the provided text area, a hidden script reveals that the clipboard's content was secretly changed.
+1.  Visit the **[Live Demo](https://macgaiver11996.github.io)**.
+2.  Copy the harmless-looking command from the page.
+3.  Paste it into the text area to see how the clipboard content was secretly changed to a warning message.
 
-This project uses a small amount of JavaScript to intercept the copy event and replace the clipboard data with an educational warning message instead of a malicious command.
+This project uses JavaScript to intercept the copy event and replace the clipboard data, demonstrating the core mechanism of pastejacking in a safe, educational manner.
 
 ---
 This project was created to spread cybersecurity awareness. Knowledge is the best defense.
