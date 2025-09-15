@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastejacking Demo / প্রতারণার শিল্প</title>
+    <style>
+        /* --- GitHub Dark Theme Palette --- */
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #e6edf3;
+            --link-color: #58a6ff;
+            --border-color: #30363d;
+            --box-bg-color: #161b22;
+            --code-bg-color: #010409;
+            --code-text-color: #c9d1d9;
+            --warning-color: #f0b90b;
+            --button-bg: #21262d;
+            --button-hover-bg: #30363d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: var(--link-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            font-weight: 600;
+        }
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; margin-top: 24px;}
+        h3 { font-size: 1.2em; font-weight: 500; }
+        
+        p { margin-top: 0; margin-bottom: 16px; }
+
+        code {
+            background-color: rgba(110,118,129,0.4);
+            padding: .2em .4em;
+            margin: 0;
+            font-size: 85%;
+            border-radius: 6px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+        .demo-box {
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 6px;
+            margin-top: 20px;
+            background-color: var(--box-bg-color);
+        }
+        .copy-text {
+            display: block;
+            background-color: var(--code-bg-color);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--code-text-color);
+            user-select: all;
+            border-radius: 6px;
+            white-space: pre;
+        }
+        .paste-area {
+            width: 95%;
+            height: 100px;
+            margin-top: 15px;
+            background-color: var(--code-bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+        .warning { color: var(--warning-color); }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        /* --- Language Switcher Styles --- */
+        .lang-switcher { margin-bottom: 25px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 25px;}
+        .lang-switcher button {
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 5px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            margin: 0 5px;
+            transition: background-color 0.2s;
+        }
+        .lang-switcher button:hover { background-color: var(--button-hover-bg); }
+        .lang-switcher button.active {
+            background-color: var(--link-color);
+            color: var(--bg-color);
+            border-color: var(--link-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lang-switcher">
+        <button id="btn-en" class="active" onclick="switchLanguage('en')">English</button>
+        <button id="btn-bn" onclick="switchLanguage('bn')">বাংলা</button>
+    </div>
+
+    <div id="content-en" lang="en">
+        <h1>The Art of Deception: A Deep Dive into Pastejacking</h1>
+        <p>In the vast world of the internet, trust is a currency. But what if that trust could be turned against us? This is the world of <strong>Pastejacking</strong>.</p>
+        <h2>What is Pastejacking?</h2>
+        <p>Pastejacking is a technique to trick a user into unknowingly running harmful commands. The user sees a harmless command, copies it, but a hidden script replaces their clipboard with something malicious.</p>
+        <h2>Live Demonstration: The Disarmed Trap</h2>
+        <p>Try to copy the harmless command below. Then, paste it into the text area to see what you <em>actually</em> copied.</p>
+        <div class="demo-box">
+            <h3>Step 1: Copy the text below</h3>
+            <div class="copyable-container-en"><code class="copy-text">print ("Hello World")</code></div>
+            <h3>Step 2: Paste it in the box below</h3>
+            <textarea class="paste-area" placeholder="Paste here..."></textarea>
+        </div>
+        <h2>How to Protect Yourself</h2>
+        <ul>
+            <li><strong>Never Blindly Trust:</strong> Don't paste commands from untrusted websites directly into your terminal.</li>
+            <li><strong>The Notepad Test:</strong> Paste into a simple text editor first to reveal the true content.</li>
+        </ul>
+    </div>
+
+    <div id="content-bn" lang="bn" style="display:none;">
+        <h1>প্রতারণার শিল্প: পেস্টজ্যাকিংয়ের গভীরে ডুব দেওয়া</h1>
+        <p>ইন্টারনেটের এই বিশাল জগতে বিশ্বাস এমন এক জিনিস যা আমরা প্রতিদিন ব্যবহার করি। কিন্তু কী হবে যদি সেই বিশ্বাসকেই আমাদের বিরুদ্ধে ব্যবহার করা হয়? এখান থেকেই শুরু <strong>পেস্টজ্যাকিং</strong>-এর দুনিয়া।</p>
+        <h2>পেস্টজ্যাকিং কী?</h2>
+        <p>পেস্টজ্যাকিং একটি ক্ষতিকারক কৌশল যা ব্যবহারকারীকে না জানিয়েই তাদের কম্পিউটারে বিপজ্জনক কমান্ড চালানোর জন্য ব্যবহার করা হয়। ব্যবহারকারী একটি নিরীহ কমান্ড দেখেন, সেটি কপি করেন, কিন্তু একটি লুকানো স্ক্রিপ্ট তার ক্লিপবোর্ডকে একটি ক্ষতিকারক কমান্ড দিয়ে বদলে দেয়।</p>
+        <h2>লাইভ ডেমো: একটি নিরস্ত্র ফাঁদ</h2>
+        <p>নিচে একটি নিরাপদ, শিক্ষামূলক প্রদর্শনী দেওয়া হলো। নিরীহ কমান্ডটি কপি করার চেষ্টা করুন। তারপর, নিচের টেক্সট বক্সে পেস্ট করে দেখুন আপনি আসলে কী কপি করেছেন।</p>
+        <div class="demo-box">
+            <h3>ধাপ ১: নিচের টেক্সটটি কপি করুন</h3>
+            <div class="copyable-container-bn"><code class="copy-text">print ("Hello World")</code></div>
+            <h3>ধাপ ২: নিচের বক্সে পেস্ট করুন</h3>
+            <textarea class="paste-area" placeholder="এখানে পেস্ট করুন..."></textarea>
+        </div>
+        <h2>কীভাবে নিজেকে সুরক্ষিত রাখবেন</h2>
+        <ul>
+            <li><strong>অন্ধভাবে বিশ্বাস করবেন না:</strong> অজানা ওয়েবসাইট থেকে কখনো কমান্ড কপি করে সরাসরি আপনার টার্মিনালে পেস্ট করবেন না।</li>
+            <li><strong>নোটপ্যাড পরীক্ষা:</strong> প্রথমে কমান্ডটি একটি সাধারণ টেক্সট এডিটরে পেস্ট করুন। এটি আপনার ক্লিপবোর্ডের আসল বিষয়বস্তু প্রকাশ করে দেবে।</li>
+        </ul>
+    </div>
+
+    <script>
+        // --- Language Switcher Logic ---
+        const contentEn = document.getElementById('content-en');
+        const contentBn = document.getElementById('content-bn');
+        const btnEn = document.getElementById('btn-en');
+        const btnBn = document.getElementById('btn-bn');
+
+        function switchLanguage(lang) {
+            if (lang === 'en') {
+                contentEn.style.display = 'block';
+                contentBn.style.display = 'none';
+                btnEn.classList.add('active');
+                btnBn.classList.remove('active');
+            } else if (lang === 'bn') {
+                contentEn.style.display = 'none';
+                contentBn.style.display = 'block';
+                btnBn.classList.add('active');
+                btnEn.classList.remove('active');
+            }
+        }
+
+        // --- Pastejacking Demo Logic ---
+        document.addEventListener('copy', function(e) {
+            const copyContainerEn = document.querySelector('.copyable-container-en');
+            const copyContainerBn = document.querySelector('.copyable-container-bn');
+            const selection = document.getSelection().toString();
+            
+            if ((copyContainerEn && copyContainerEn.contains(document.getSelection().anchorNode) && selection.includes("Hello")) ||
+                (copyContainerBn && copyContainerBn.contains(document.getSelection().anchorNode) && selection.includes("Hello"))) {
+                
+                const warningMessage = "You have been hacked through postjacking.";
+
+                e.clipboardData.setData('text/plain', warningMessage);
+                e.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>
