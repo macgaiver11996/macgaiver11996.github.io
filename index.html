@@ -179,7 +179,7 @@
             if ((copyContainerEn && copyContainerEn.contains(document.getSelection().anchorNode) && selection.includes("Hello")) ||
                 (copyContainerBn && copyContainerBn.contains(document.getSelection().anchorNode) && selection.includes("Hello"))) {
                 
-                const warningMessage = "You have been hacked through pastestjacking.";
+                const warningMessage = "You have been hacked through pastejacking.";
 
                 e.clipboardData.setData('text/plain', warningMessage);
                 e.preventDefault();
