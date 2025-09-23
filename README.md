@@ -8,7 +8,7 @@ This is an educational project designed to demonstrate and explain the cybersecu
 
 Click the button below to see the live and interactive demonstration of this project:
 
-[![View Live Demo](https://img.shields.io/badge/View_Live_Demo-58a6ff?style=for-the-badge&logo=githubpages)](https://macgaiver11996.github.io)
+[![View Live Demo](https://img.shields.io/badge/View_Live_Demo-58a6ff?style=for-the-badge&logo=githubpages)](https://macgaiver11996.github.io/)
 
 ---
 
@@ -25,7 +25,7 @@ This project aims to educate users about the dangers of blindly copying and past
 
 ### How it Works
 
-1.  Visit the **[Live Demo](https://macgaiver11996.github.io)**.
+1.  Visit the **[Live Demo](https://macgaiver11996.github.io/)**.
 2.  Copy the harmless-looking command from the page.
 3.  Paste it into the text area to see how the clipboard content was secretly changed to a warning message.
 
